@@ -6,8 +6,16 @@
     <title>Kichamu | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
+<div class="background-orbs">
+  <span></span><span></span><span></span><span></span>
+</div>
+
 <body>
+<!-- ===== BACKGROUND PARTICLE NETWORK CANVAS ===== -->
+<canvas id="neural-bg"></canvas>
 
     <!-- ================= HEADER / NAVBAR ================= -->
     <header>
@@ -35,7 +43,7 @@
     </section>
 
     <!-- ================= ABOUT SECTION ================= -->
-    <section id="about" class="about">
+    <section id="about" data-aos="fade-right" class="about">
         <h2>About Me</h2>
         <div class="about-container">
             <p>
@@ -62,7 +70,7 @@
     <div class="project-gallery">
 
         <!-- ===== Project 1 ===== -->
-        <div class="project-card">
+        <div class="project-card" data-aos="zoom-in">
             <img src="images/ecommerce-app.png" alt="E-commerce App UI">
             <div class="project-info">
                 <h3>E-commerce App</h3>
@@ -78,7 +86,7 @@
         </div>
 
         <!-- ===== Project 2 ===== -->
-        <div class="project-card">
+        <div class="project-card" data-aos="zoom-in">
             <img src="images/dashboard-ui.png" alt="Admin Dashboard UI">
             <div class="project-info">
                 <h3>Admin Dashboard</h3>
@@ -94,7 +102,7 @@
         </div>
 
         <!-- ===== Project 3 ===== -->
-        <div class="project-card">
+        <div class="project-card" data-aos="zoom-in">
             <img src="images/chat-app.png" alt="Chat Application">
             <div class="project-info">
                 <h3>Chat Application</h3>
@@ -110,7 +118,7 @@
         </div>
 
         <!-- ===== Project 4 ===== -->
-        <div class="project-card">
+        <div class="project-card" data-aos="zoom-in">
             <img src="images/finance-tracker.png" alt="Finance Tracker">
             <div class="project-info">
                 <h3>Finance Tracker</h3>
@@ -242,7 +250,115 @@
     <footer>
         <p>© 2025 Benaya Kichamu | All Rights Reserved</p>
     </footer>
+<script>
+const canvas = document.getElementById('neural-bg');
+const ctx = canvas.getContext('2d');
+
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
+
+let mouse = { x: null, y: null, radius: 120 };
+
+window.addEventListener('mousemove', function(event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+});
+
+window.addEventListener('resize', function() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+});
+
+class Particle {
+    constructor(x, y, dx, dy, size, color) {
+        this.x = x;
+        this.y = y;
+        this.dx = dx;
+        this.dy = dy;
+        this.size = size;
+        this.color = color;
+    }
+
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+    }
+
+    update() {
+        if (this.x > width || this.x < 0) this.dx = -this.dx;
+        if (this.y > height || this.y < 0) this.dy = -this.dy;
+        this.x += this.dx;
+        this.y += this.dy;
+
+        // Mouse attraction
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < mouse.radius) {
+            this.x -= dx / 10;
+            this.y -= dy / 10;
+        }
+
+        this.draw();
+    }
+}
+
+// Create particles
+let particlesArray;
+function initParticles() {
+    particlesArray = [];
+    let count = (width * height) / 15000; // density
+    for (let i = 0; i < count; i++) {
+        let size = Math.random() * 2 + 1;
+        let x = Math.random() * width;
+        let y = Math.random() * height;
+        let dx = (Math.random() - 0.5) * 1;
+        let dy = (Math.random() - 0.5) * 1;
+        let color = 'rgba(0, 102, 255, 0.7)';
+        particlesArray.push(new Particle(x, y, dx, dy, size, color));
+    }
+}
+
+function connectParticles() {
+    for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+            let dx = particlesArray[a].x - particlesArray[b].x;
+            let dy = particlesArray[a].y - particlesArray[b].y;
+            let distance = dx * dx + dy * dy;
+
+            if (distance < 9000) {
+                ctx.strokeStyle = 'rgba(0, 102, 255,' + (1 - distance / 9000) + ')';
+                ctx.lineWidth = 0.5;
+                ctx.beginPath();
+                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, width, height);
+    for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+    }
+    connectParticles();
+}
+
+initParticles();
+animate();
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true, // animation happens only once
+  });
+</script>
 
 </body>
 </html>
-
