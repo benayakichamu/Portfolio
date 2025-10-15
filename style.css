@@ -304,3 +304,104 @@ footer {
     padding: 70px 5%;
   }
 }
+/* =========================
+   SCROLL REVEAL ANIMATIONS
+========================= */
+.about, .projects, .designs, .resume, .contact, .video-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.about.active, 
+.projects.active, 
+.designs.active, 
+.resume.active, 
+.contact.active, 
+.video-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* =========================
+   PROJECTS SECTION STYLING
+========================= */
+.projects {
+  background: #f8fbff;
+  padding: 100px 8%;
+  text-align: center;
+}
+
+.projects h2 {
+  color: #007bff;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.projects p {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 123, 255, 0.2);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.project-info h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.project-links .btn {
+  padding: 8px 15px;
+  border-radius: 8px;
+  background: var(--gradient-blue);
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.project-links .btn:hover {
+  background: #0056b3;
+}
+
