@@ -1,0 +1,306 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f8fbff;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* Accent Colors */
+:root {
+  --primary-blue: #007bff;
+  --light-blue: #e3f2fd;
+  --gradient-blue: linear-gradient(135deg, #00aaff, #007bff);
+}
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 123, 255, 0.2);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-blue);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--gradient-blue);
+  color: white;
+  padding: 0 10%;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content h2 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: white;
+  color: var(--primary-blue);
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--primary-blue);
+  color: white;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+section {
+  padding: 100px 10%;
+}
+
+.about {
+  background: #fff;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 40px;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: auto;
+  background: #f9fbff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
+}
+
+.about-container p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.skills li {
+  margin-bottom: 10px;
+  list-style: none;
+  background: #e9f3ff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* =========================
+   PROJECTS SECTION
+========================= */
+.projects {
+  background: #f0f8ff;
+  text-align: center;
+}
+
+.projects h2 {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.projects p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* =========================
+   DESIGN VIDEOS SECTION
+========================= */
+.designs {
+  background: white;
+}
+
+.designs h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 40px;
+}
+
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  padding: 0 5%;
+}
+
+.video-card {
+  background: #f5faff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
+  text-align: center;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   RESUME SECTION
+========================= */
+.resume {
+  text-align: center;
+  background: #f9fbff;
+}
+
+.resume h2 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.resume p {
+  margin-bottom: 20px;
+}
+
+.resume .btn {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.resume .btn:hover {
+  background: #0056b3;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact {
+  background: white;
+  text-align: center;
+}
+
+.contact h2 {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.contact ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.contact li {
+  margin-bottom: 10px;
+}
+
+.contact a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: var(--gradient-blue);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  header {
+    justify-content: space-between;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 70px 5%;
+  }
+}
