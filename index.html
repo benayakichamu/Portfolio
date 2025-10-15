@@ -9,17 +9,20 @@
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
+
 <div class="background-orbs">
   <span></span><span></span><span></span><span></span>
 </div>
 
 <body>
+    
 <!-- ===== BACKGROUND PARTICLE NETWORK CANVAS ===== -->
 <canvas id="neural-bg"></canvas>
 
     <!-- ================= HEADER / NAVBAR ================= -->
     <header>
         <div class="logo">KICHAMU</div>
+
         <nav>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -32,25 +35,31 @@
         </nav>
     </header>
 
-    <!-- ================= HERO SECTION ================= -->
-    <section id="home" class="hero">
+   <!-- ================= HERO SECTION ================= -->
+<section id="home" class="hero">
+    <div class="hero-card">
         <div class="hero-content">
             <h1>Benaya Kichamu</h1>
             <h2>Software Engineer & UI/UX Designer</h2>
             <p>Creating scalable, user-friendly, and innovative software solutions with a passion for technology and design.</p>
             <a href="#contact" class="btn">Hire Me</a>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- ================= ABOUT SECTION ================= -->
-    <section id="about" data-aos="fade-right" class="about">
+<section id="about" data-aos="fade-right" class="about">
+    <div class="about-card">
         <h2>About Me</h2>
         <div class="about-container">
             <p>
-                I am a Lead Software Engineer and IT Specialist with expertise in full-stack development, UI/UX design, database management, 
-                system maintenance, and IT support. Skilled in delivering scalable, user-friendly, and innovative software systems. 
-                I am also fluent in English and Swahili and open to remote or onsite opportunities.
+                I am a <strong>Lead Software Engineer</strong> and <strong>IT Specialist</strong> with expertise in 
+                full-stack development, UI/UX design, database management, system maintenance, and IT support. 
+                Skilled in delivering scalable, user-friendly, and innovative software systems. 
+                Fluent in <strong>English</strong> and <strong>Swahili</strong>, and open to both remote and onsite opportunities.
             </p>
+
             <ul class="skills">
                 <li><strong>Programming:</strong> C, C++, Java, Kotlin, Python, JavaScript, PHP, C#, Go, Rust, Ruby, MATLAB</li>
                 <li><strong>Frameworks & Tools:</strong> React.js, React Native, Flutter, Django, Flask, FastAPI, Laravel</li>
@@ -60,9 +69,10 @@
                 <li><strong>AI & Annotation:</strong> RLHF, Prompt Evaluation, Data Labeling</li>
             </ul>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ================= PROJECTS SECTION ================= -->
+<!-- ================= PROJECTS SECTION ================= -->
 <section id="projects" class="projects">
     <h2>My Projects</h2>
     <p>Some of my featured software and design projects showcasing my engineering and UI/UX expertise.</p>
@@ -70,7 +80,7 @@
     <div class="project-gallery">
 
         <!-- ===== Project 1 ===== -->
-        <div class="project-card" data-aos="zoom-in">
+        <div class="project-card">
             <img src="images/ecommerce-app.png" alt="E-commerce App UI">
             <div class="project-info">
                 <h3>E-commerce App</h3>
@@ -86,7 +96,7 @@
         </div>
 
         <!-- ===== Project 2 ===== -->
-        <div class="project-card" data-aos="zoom-in">
+        <div class="project-card">
             <img src="images/dashboard-ui.png" alt="Admin Dashboard UI">
             <div class="project-info">
                 <h3>Admin Dashboard</h3>
@@ -102,7 +112,7 @@
         </div>
 
         <!-- ===== Project 3 ===== -->
-        <div class="project-card" data-aos="zoom-in">
+        <div class="project-card">
             <img src="images/chat-app.png" alt="Chat Application">
             <div class="project-info">
                 <h3>Chat Application</h3>
@@ -118,7 +128,7 @@
         </div>
 
         <!-- ===== Project 4 ===== -->
-        <div class="project-card" data-aos="zoom-in">
+        <div class="project-card">
             <img src="images/finance-tracker.png" alt="Finance Tracker">
             <div class="project-info">
                 <h3>Finance Tracker</h3>
@@ -133,8 +143,26 @@
             </div>
         </div>
 
+        <!-- ===== Project 5: TaskBid App ===== -->
+        <div class="project-card">
+            <img src="images/task-bid-app.png" alt="Task Bid App">
+            <div class="project-info">
+                <h3>TaskBid App</h3>
+                <p>A freelance bidding platform where users can post tasks and freelancers can bid for work in real time.</p>
+                <p><strong>Languages:</strong> Kotlin, Firebase</p>
+                <p><strong>Duration:</strong> 2 weeks</p>
+                <div class="project-links">
+                    <a href="project-pages/taskbid.html" class="btn">View Project</a>
+                    <a href="https://github.com/yourusername/task-bid-app" class="btn" target="_blank">GitHub</a>
+                    <a href="https://www.youtube.com/embed/YOUR_VIDEO_ID_5" class="btn" target="_blank">Watch Demo</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
+
+  
 
    <!-- ================= DESIGN VIDEOS SECTION ================= -->
 <section id="designs" class="designs">
@@ -229,6 +257,8 @@
 
     <!-- ================= RESUME SECTION ================= -->
     <section id="resume" class="resume">
+        <div class="floating-box">Hi There 👋</div>
+
         <h2>Resume</h2>
         <p>Download my complete resume here:</p>
         <a href="Benaya_Kichamu_Resume.pdf" class="btn" download>Download Resume (PDF)</a>
@@ -359,6 +389,7 @@ animate();
     once: true, // animation happens only once
   });
 </script>
+
 
 </body>
 </html>
